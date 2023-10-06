@@ -1,0 +1,8 @@
+html body { margin-top:0px; margin-right:10px; margin-bottom:10px; margin-left:0px; font-family:arial; font-size:14px; color:#000000; font-weight:normal; text-decoration:none; }
+
+div.applist { display:block; height:auto; width:150px; padding-bottom:2%; margin-left:3px; border-top:5px solid #336699; border-right:3px solid #336699; border-left:3px solid #336699; border-bottom:5px solid #336699; border-radius:5px; }
+div.app { position:relative; height:25px; width:144px; margin-top:4px; margin-left:5px; margin-right:3px; }
+div.appname { position:relative; width:100px; padding-top:2px; float:left; }
+div.appstatus { position:relative; width:40px; float:left;  }
+div.divider { position:relative; height:2px; width:90%; background-color:#336699; margin-top:2px; margin-bottom:2px; margin-left:5%; float:left; }
+div.lastupdate { height:20px; font-size:11px; margin-top:5px; }

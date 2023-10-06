@@ -1,0 +1,6 @@
+# you can comment lines that you do not want checked right now with the leading '#'
+# do not inclde spaces in the application name
+Google https://www.google.com
+MSN https://www.msn.com
+Yahoo https://www.yahoo.com
+Not A Real Site https://www.notarealaddress2goto.com

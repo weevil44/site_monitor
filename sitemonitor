@@ -1,0 +1,8 @@
+# cron file to setup the job to execute on a regular schedule on linux, this should be copied into /etc/cron.d
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=me@mail.com
+
+# edit these paths to match your installation
+# this will execute the site monitoring script every 10 minutes
+*/10 * * * * root python /opt/sitemonitor/sitemonitor.py >> /var/log/sitemonitor/site.log
