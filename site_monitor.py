@@ -16,6 +16,7 @@ from email.mime.text import MIMEText
 argumentList = sys.argv[1:]
 options = "d:"
 longOptions = ["Dir"]
+appBase = ''
 
 try:
     # Parsing argument
@@ -43,12 +44,12 @@ mailFrom = 'Alerts`@noreply.com'
 if env == 'prod':
   degradeMail = ['me@mail.com']
   outageMail = ['me@mail.com']
-  baseDir = '/app/'
+  baseDir = '/app'
 else:
   # set5 env to anything but prod for testing using the below values
   degradeMail = ['me@mail.com']
   outageMail = ['me@mail.com']
-  baseDir = './'
+  baseDir = '/usr/app'
 
 replyTo = 'me@mail.com'
 
@@ -56,10 +57,10 @@ replyTo = 'me@mail.com'
 durationThreshold = 10
 ########
 
-if not appBase:
+if appBase == '':
   appBase = baseDir
 
-statusPage = appBase + 'site_monitor/status.html'
+statusPage = appBase + '/src/status.html'
 
 
 def url_check():
@@ -75,7 +76,7 @@ def url_check():
     duration = (round(endTime-startTime, 3))
   return duration
 
-listFileName = appBase + 'site_monitor/urllist.txt'
+listFileName = appBase + '/src/urllist.txt'
 statusRows = ""
 divider = ""
 with open(listFileName) as urlFile:
@@ -152,7 +153,7 @@ with open(listFileName) as urlFile:
       appDiv = (f"""
       <div class="app">
         <div class="appname">{app}:</div>
-        <div class="appstatus"><img src='src/images/{status}light_small.png' title='Performance: {health}' alt='{status}'></div>
+        <div class="appstatus"><img src='images/{status}light_small.png' title='Performance: {health}' alt='{status}'></div>
       </div>
       """).strip()
       statusRows += divider + appDiv
@@ -169,7 +170,7 @@ with open(listFileName) as urlFile:
   <html>
   <head>
     <title>Web Application Status</title>
-    <link href="src/css/siteMonitor.css" rel="stylesheet" type="text/css" />
+    <link href="css/siteMonitor.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="applist">
